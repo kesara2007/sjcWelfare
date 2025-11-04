@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import api from '../axios.js';
 import '../../css/bgimg.css'
+import toast from 'react-hot-toast';
 
 export default function login() {
    const nav=useNavigate()
@@ -13,17 +14,19 @@ export default function login() {
     try {      
        api.post('/login', { email, password })
         .then(response => {
-      console.log('controller',response.data);
+     
       localStorage.setItem('token',response.data.token);
      nav('/admin/dashboard')
     })
     .catch(error => {
-      console.error(error);
+      toast.error('You are not authorized to access this resource' );
+      
     });
     }   
    
     catch (error) {
-      console.error(error);
+      toast.error('Username or password is incorrect' );
+      
     }
    }
   return (

@@ -32,7 +32,7 @@ export default function Dashboard() {
             </div>
             <div className='flex flex-col gap-2 ml-2 mt-5'>
               {menuItem.map((item,index)=>(
-            <Link key={index} to ={item.path} className={`hover:bg-blue-700 rounded-md p-2 transition-all p-5 ${location.pathname===item.path?'bg-blue-200 rounded-md transition p-5':'bg-blue-900'}`} onClick={item.onClick}>
+            <Link key={index} to ={item.path} className={`hover:bg-blue-400 rounded-md p-2 transition-all p-5 ${location.pathname===item.path?'bg-white rounded-md transition p-5':'bg-blue-900 text-white'}`} onClick={item.onClick}>
               {item.name}
             </Link>
           ))}

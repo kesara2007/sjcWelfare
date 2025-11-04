@@ -6,12 +6,14 @@ import Home from './pages/home';
 import '../css/app.css';
 import ProtectedRoute from './components/ProtectedRoute';
 import Dashboard from './pages/admin/dashboard';
+import { Toaster } from 'react-hot-toast';
 
 
 
 export function App() {
 return (
 <BrowserRouter>
+<Toaster position="top-right" />
 <Routes>
 <Route path="/login" element={<Login/>} />
 <Route path="/" element={<Home/>} />

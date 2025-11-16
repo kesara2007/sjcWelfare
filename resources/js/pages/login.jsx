@@ -22,12 +22,14 @@ export default function login() {
       });
     })
     .catch(error => {
-      console.error(error);
+      toast.error('You are not authorized to access this resource' );
+      
     });
     }
 
     catch (error) {
-      console.error(error);
+      toast.error('Username or password is incorrect' );
+      
     }
    }
   return (

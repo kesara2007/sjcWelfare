@@ -7,6 +7,7 @@ import '../css/app.css';
 import ProtectedRoute from './components/ProtectedRoute';
 import { PermissionProvider } from './contexts/PermissionContext';
 import Dashboard from './pages/admin/dashboard';
+
 import StudentList from './pages/students/StudentList';
 import StudentForm from './pages/students/StudentForm';
 import StudentUpgrade from './pages/students/StudentUpgrade';
@@ -47,12 +48,12 @@ export function App() {
             </Route>
           </Route>
 
-          {/* Redirect root admin to dashboard */}
-          <Route path="/admin" element={<ProtectedRoute/>}>
-            <Route index element={<div className="p-8"><h1 className="text-2xl font-bold">Welcome to Admin Dashboard</h1></div>} />
-          </Route>
-        </Routes>
-      </PermissionProvider>
+
+        {/* Redirect root admin to dashboard */}
+        <Route path="/admin" element={<ProtectedRoute/>}>
+          <Route index element={<div className="p-8"><h1 className="text-2xl font-bold">Welcome to Admin Dashboard</h1></div>} />
+        </Route>
+      </Routes>
     </BrowserRouter>
   );
 }

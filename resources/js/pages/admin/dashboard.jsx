@@ -60,6 +60,7 @@ export default function Dashboard() {
             {/* Scrollable menu */}
             <div className='flex flex-col gap-1 p-2 mt-2 h-[calc(100vh-180px)] overflow-y-auto'>
               {menuItem.map((item,index)=>(
+
                 <Link
                   key={index}
                   to={item.path}
@@ -71,6 +72,7 @@ export default function Dashboard() {
                   {item.name}
                 </Link>
               ))}
+
             </div>
         </div>
 
